@@ -437,6 +437,7 @@ static inline int sec_reset_idx(uint8_t sec_idx)
 	return 0;
 }
 
+#ifdef CONFIG_RNG_INIT
 static int instantiate_rng(uint8_t sec_idx)
 {
 	struct result op;
@@ -561,6 +562,7 @@ static int rng_init(uint8_t sec_idx)
 
 	return ret;
 }
+#endif
 
 int sec_init_idx(uint8_t sec_idx)
 {
@@ -635,6 +637,7 @@ int sec_init_idx(uint8_t sec_idx)
 	pamu_enable();
 #endif
 
+#ifdef CONFIG_RNG_INIT
 	if (get_rng_vid(sec_idx) >= 4) {
 		if (rng_init(sec_idx) < 0) {
 			printf("SEC%u: RNG instantiation failed\n", sec_idx);
@@ -642,6 +645,7 @@ int sec_init_idx(uint8_t sec_idx)
 		}
 		printf("SEC%u: RNG instantiated\n", sec_idx);
 	}
+#endif
 
 	return ret;
 }

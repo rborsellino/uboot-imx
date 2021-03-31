@@ -292,6 +292,14 @@ struct sg_entry {
 #define ERROR_IN_PAGE_ALLOC	1
 #define ECONSTRJDESC   -1
 
+/*
+ * rng_self_test() - Perform RNG self test
+ * @result:     The address where RNG self test will reside in memory
+ *
+ * Returns zero on success,and negative on error.
+ */
+int rng_self_test(u8 *result);
+
 #endif
 
 /* blob_dek:
