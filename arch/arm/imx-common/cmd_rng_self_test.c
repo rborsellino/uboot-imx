@@ -11,7 +11,7 @@
 #include <environment.h>
 #include <linux/compiler.h>
 #include <mapmem.h>
-#include <asm-generic/errno.h>
+#include <errno.h>
 #include <fsl_sec.h>
 
 DECLARE_GLOBAL_DATA_PTR;

@@ -12,7 +12,7 @@
 #include <asm/arch/clock.h>
 #include <mapmem.h>
 #include <malloc.h>
-#include <asm-generic/errno.h>
+#include <errno.h>
 #include <fsl_sec.h>
 #include "jobdesc.h"
 #include "desc.h"
